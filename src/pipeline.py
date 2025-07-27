@@ -1,5 +1,3 @@
-# src/pipeline.py
-
 import time
 import subprocess
 
@@ -7,7 +5,7 @@ import subprocess
 from src.fetch_data import fetch_all_wallets
 from src.protocol_parser import parse_all_wallets
 from src.feature_engineering import process_all_wallets
-from src.scoring import score_all_wallets
+from src.scoring import score_wallets as score_all_wallets
 from src.config import get_compound_v3_markets
 
 def run_full_pipeline():

@@ -1,5 +1,3 @@
-# src/protocol_parser.py
-
 import json
 from pathlib import Path
 from src.config import (
@@ -36,10 +34,9 @@ METHOD_MAP_V3 = {
 V3_MARKETS = get_compound_v3_markets()
 V3_ETH_CONTRACTS = set(market.lower() for market in V3_MARKETS.get("ethereum", {}).values())
 
+# Extract action from a transaction
 def extract_action(tx: dict) -> str:
-    """
-    Determine the type of Compound interaction (V2 or V3).
-    """
+
     to_address = tx["to"].lower()
     input_sig = tx["input"][:10]
 
@@ -54,11 +51,9 @@ def extract_action(tx: dict) -> str:
     return None
 
 
+# Parse transactions for a single wallet
 def parse_wallet_transactions(wallet_address: str):
-    """
-    Parse a wallet's transactions and extract all Compound (V2 & V3) actions.
-    Save results to CSV.
-    """
+
     input_file = RAW_TXN_DIR / f"{wallet_address}.json"
     output_file = FEATURES_DIR / f"{wallet_address}.csv"
 
@@ -91,11 +86,9 @@ def parse_wallet_transactions(wallet_address: str):
     else:
         print(f"[-] No Compound txns found for {wallet_address} (txs: {len(txns)})")
 
-
+# Parse all wallets in the raw transactions directory
 def parse_all_wallets():
-    """
-    Batch parse all wallet transaction files.
-    """
+
     for json_file in RAW_TXN_DIR.glob("*.json"):
         wallet_address = json_file.stem
         parse_wallet_transactions(wallet_address)

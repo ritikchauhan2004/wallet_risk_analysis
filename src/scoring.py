@@ -1,5 +1,3 @@
-# src/scoring.py
-
 import pandas as pd
 import numpy as np
 from scipy.stats import rankdata
@@ -8,11 +6,8 @@ from src import config
 INPUT_FEATURES_FILE = config.PROCESSED_FEATURES_DIR / "wallet_features.csv"
 OUTPUT_FILE = config.OUTPUT_FILE
 
+# Normalize and rank features for scoring
 def normalize_rank(series, ascending=True):
-    """
-    Converts a series into percentile rank [0, 1].
-    Lower is riskier if ascending=True.
-    """
     ranks = rankdata(series, method='average')
     if not ascending:
         ranks = len(series) - ranks + 1

@@ -1,5 +1,3 @@
-# src/config.py
-
 import os
 import json
 import requests
@@ -52,10 +50,8 @@ COMPOUND_V2_CONTRACTS = {k.lower(): v for k, v in COMPOUND_V2_CONTRACTS.items()}
 COMPOUND_V3_FALLBACK_FILE = BASE_DIR / "data" / "compound_v3_markets.json"
 
 def fetch_compound_v3_from_api() -> dict:
-    """
-    Fetch latest Compound V3 market addresses from known sources.
-    In production, replace with a subgraph or registry reader.
-    """
+   # Fetch Compound V3 markets from a remote source.
+   # This could be a maintained GitHub list, subgraph API, etc.
     try:
         # Example: Pull from GitHub maintained list or subgraph API
         # Placeholder below simulates that response
@@ -77,9 +73,7 @@ def fetch_compound_v3_from_api() -> dict:
         return {}
 
 def get_compound_v3_markets() -> dict:
-    """
-    Load local Compound V3 market file, or fetch from remote.
-    """
+    # Try to load from local cache first
     if COMPOUND_V3_FALLBACK_FILE.exists():
         try:
             with open(COMPOUND_V3_FALLBACK_FILE, "r") as f:

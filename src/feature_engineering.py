@@ -1,5 +1,3 @@
-# src/feature_engineering.py
-
 import pandas as pd
 from pathlib import Path
 from collections import Counter
@@ -70,11 +68,9 @@ def extract_features_from_wallet(wallet_file: Path) -> dict:
         "protocol_version": protocol_version
     }
 
-
+# Process all wallet CSV files and aggregate features
 def process_all_wallets():
-    """
-    Processes all feature CSVs and writes one final combined CSV.
-    """
+ 
     all_features = []
 
     for csv_file in config.FEATURES_DIR.glob("*.csv"):
