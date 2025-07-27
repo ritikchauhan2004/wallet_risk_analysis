@@ -1,0 +1,52 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Compiled files
+*.egg-info/
+*.log
+
+# Test/coverage tools
+.coverage
+coverage.xml
+htmlcov/
+
+# Output / generated data
+data/raw_transactions/
+data/features/
+data/processed_features/
+data/output/
+
+# Sync / backup files
+*.bak
+*.swp
+
+# Notebook outputs (optional)
+*.nbconvert.ipynb
+
+# Build artifacts
+build/
+dist/
+*.egg

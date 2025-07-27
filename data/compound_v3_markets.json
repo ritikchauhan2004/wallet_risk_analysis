@@ -1,0 +1,9 @@
+{
+  "ethereum": {
+    "USDC": "0xc3d688b66703497daa19211eedff47f25384cdc3",
+    "WETH": "0xa17581a9e3356d9a858b789d68b4d866e593a22f"
+  },
+  "arbitrum": {
+    "USDC": "0x9eeb6e7c3d69e3ee58d97b6fb6f7a8c09b5d0ae6"
+  }
+}

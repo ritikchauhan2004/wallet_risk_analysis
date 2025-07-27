@@ -1,0 +1,17 @@
+# Core libraries
+pandas==2.2.2
+numpy==1.26.4
+requests==2.31.0
+python-dotenv==1.0.1
+
+# Scoring / statistics
+scipy==1.13.1
+
+# Visualization (for notebooks)
+matplotlib==3.8.4
+seaborn==0.13.2
+
+# Jupyter (optional but recommended)
+jupyterlab==4.1.6
+notebook==7.2.0
+ipykernel==6.29.4
