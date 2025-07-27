@@ -1,4 +1,4 @@
-# 📘 `README.md` — Wallet Risk Scoring Using Compound Protocol (V2 + V3)
+# 📘Wallet Risk Scoring Using Compound Protocol (V2 + V3)
 
 ## 📌 Project Overview
 
